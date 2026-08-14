@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Wedding Day Planning — Independence Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mag:   #CE00F2;
+    --mag-dim: rgba(206,0,242,0.12);
+    --mag-glow: rgba(206,0,242,0.22);
+    --teal:  #36D1B5;
+    --teal-dim: rgba(54,209,181,0.12);
+    --grey:  #858585;
+    --black: #0e0e0e;
+    --ink:   #2a1a36;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --border: #e0d8f0;
+    --error: #c0392b;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── SITE HEADER ── */
+  .site-header {
+    background: var(--black);
+    border-bottom: 2px solid var(--mag);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-logo-ie {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .site-logo-sub {
+    font-size: 7px;
+    letter-spacing: 3px;
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .site-tagline {
+    font-family: 'Dancing Script', cursive;
+    font-size: 17px;
+    color: rgba(206,0,242,0.75);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: 52px 32px 48px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg,transparent,transparent 26px,rgba(255,255,255,0.016) 26px,rgba(255,255,255,0.016) 27px),
+      repeating-linear-gradient(90deg,transparent,transparent 56px,rgba(255,255,255,0.009) 56px,rgba(255,255,255,0.009) 57px);
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(206,0,242,0.15) 0%, transparent 65%);
+    top: -160px; left: 50%; transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(32px, 6vw, 52px);
+    color: #f7f3ec;
+    line-height: 1.05;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .hero h1 em { font-style: italic; color: var(--mag); }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--grey);
+    position: relative;
+  }
+
+  /* ── TAPE STRIP ── */
+  .tape {
+    position: relative;
+    height: 38px;
+    background: var(--mag);
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    gap: 18px;
+    overflow: hidden;
+  }
+  .tape::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(90deg,transparent,transparent 10px,rgba(255,255,255,0.07) 10px,rgba(255,255,255,0.07) 11px);
+  }
+  .tape-item {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+  }
+  .tape-dot { color: rgba(255,255,255,0.4); font-size: 6px; position: relative; z-index: 1; }
+
+  /* ── MAIN WRAP ── */
+  .wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 100px; }
+
+  /* ── PROGRESS BAR ── */
+  .timeline-progress {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 40px;
+    position: relative;
+  }
+  .tp-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .tp-line {
+    position: absolute;
+    top: 7px; left: -50%;
+    width: 100%; height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .tp-step:first-child .tp-line { display: none; }
+  .tp-dot {
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    z-index: 1;
+    transition: all .3s ease;
+  }
+  .tp-step.done .tp-dot  { background: var(--teal); border-color: var(--teal); }
+  .tp-step.active .tp-dot {
+    background: var(--mag); border-color: var(--mag);
+    box-shadow: 0 0 0 4px var(--mag-dim);
+  }
+  .tp-step.done .tp-line,
+  .tp-step.active .tp-line { background: var(--mag); }
+  .tp-label {
+    margin-top: 10px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey);
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.3;
+  }
+  .tp-step.active .tp-label { color: var(--ink); font-weight: 600; }
+  .tp-step.done .tp-label   { color: var(--teal); }
+  @media (max-width: 560px) { .tp-label { display: none; } }
+
+  /* ── PANEL ── */
+  .panel {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    padding: 40px 36px;
+    position: relative;
+  }
+  .panel::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--mag), var(--teal));
+  }
+  /* Corner frame detail echoing collateral */
+  .panel::after {
+    content: '';
+    position: absolute; inset: 8px;
+    border: 1px solid rgba(206,0,242,0.12);
+    pointer-events: none;
+  }
+  .step { display: none; }
+  .step.active { display: block; animation: fade .35s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Step header */
+  .step-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--mag);
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.15;
+  }
+  .step-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+
+  /* ── FORM ELEMENTS ── */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid.single { grid-template-columns: 1fr; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 7px;
+    font-weight: 600;
+  }
+  .field .hint {
+    font-size: 11px;
+    color: var(--grey);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 300;
+    margin-top: 4px;
+    display: block;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  input[type=date],
+  input[type=time],
+  input[type=number],
+  textarea,
+  select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    background: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--ink);
+    transition: border-color .2s, box-shadow .2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--mag);
+    box-shadow: 0 0 0 3px var(--mag-dim);
+  }
+  textarea { resize: vertical; min-height: 82px; }
+
+  fieldset { border: none; margin-bottom: 18px; }
+  legend {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 9px;
+    font-weight: 600;
+  }
+
+  /* Repeating blocks */
+  .repeat-block {
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--mag);
+    background: var(--cream);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .repeat-block .rb-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ink);
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .rb-remove {
+    position: absolute; top: 12px; right: 14px;
+    background: none; border: none;
+    color: var(--grey);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: color .2s;
+  }
+  .rb-remove:hover { color: var(--error); }
+
+  .add-btn {
+    background: none;
+    border: 1px dashed var(--mag);
+    color: var(--ink);
+    padding: 10px 18px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background .2s;
+  }
+  .add-btn:hover { background: var(--mag-dim); }
+
+  /* Genre checkboxes */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 18px;
+  }
+  @media (max-width: 560px) { .checkbox-grid { grid-template-columns: 1fr; } }
+  .cb {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink);
+    cursor: pointer;
+    padding: 4px 0;
+  }
+  .cb input[type=checkbox] {
+    width: 16px; height: 16px;
+    accent-color: var(--mag);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Pill toggles */
+  .pill-group { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill {
+    border: 1px solid var(--border);
+    padding: 9px 20px;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: var(--cream);
+    color: var(--ink);
+    transition: all .2s;
+  }
+  .pill.selected {
+    background: var(--mag);
+    border-color: var(--mag);
+    color: #fff;
+  }
+
+  /* Nav buttons */
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 13px 32px;
+    border: 1px solid var(--mag);
+    background: var(--mag);
+    color: #fff;
+    cursor: pointer;
+    transition: all .25s;
+    border-radius: 0;
+  }
+  .btn:hover { background: #a800c4; border-color: #a800c4; }
+  .btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border);
+  }
+  .btn.ghost:hover { background: var(--cream); border-color: var(--grey); }
+  .btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  /* ── DIVIDER RULE ── */
+  .rule {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 24px 0;
+  }
+  .rule-line { flex: 1; height: 1px; background: linear-gradient(90deg,transparent,var(--mag),transparent); }
+  .rule-diamond { color: var(--mag); font-size: 7px; }
+
+  /* ── REVIEW ── */
+  .review-section { margin-bottom: 24px; }
+  .review-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 19px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+  }
+  .review-section h3 span { color: var(--mag); font-style: italic; }
+  .review-row {
+    display: flex;
+    font-size: 12.5px;
+    padding: 5px 0;
+    gap: 10px;
+    border-bottom: 0.5px solid rgba(224,216,240,0.5);
+  }
+  .review-row:last-child { border-bottom: none; }
+  .review-row .k {
+    color: var(--grey);
+    min-width: 160px;
+    flex-shrink: 0;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .review-row .v { color: var(--ink); font-weight: 300; }
+  .review-empty { color: #bbb; font-style: italic; font-size: 12px; }
+
+  /* ── SUCCESS ── */
+  .success {
+    text-align: center;
+    padding: 56px 20px;
+  }
+  .success-check {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--mag);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 26px;
+  }
+  .success h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .success .success-script {
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    color: rgba(206,0,242,0.7);
+    margin-bottom: 16px;
+  }
+  .success p {
+    color: var(--grey);
+    max-width: 400px;
+    margin: 0 auto 28px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(206,0,242,0.45);
+  }
+
+  @media (max-width: 560px) {
+    .panel { padding: 28px 20px; }
+    .site-header { padding: 14px 20px; }
+    .hero { padding: 40px 20px 36px; }
+    .tape { padding: 0 20px; }
+    .wrap { padding: 28px 16px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<div class="site-header">
+  <div>
+    <div class="site-logo-ie">ie</div>
+    <div class="site-logo-sub">Independence Events</div>
+  </div>
+  <div class="site-tagline">Uniquely Yours</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">Wedding Day Planning &mdash; Client Survey</div>
+  <h1>Your Day, <em>Perfectly</em><br>Orchestrated.</h1>
+  <div class="hero-sub">Tell us the details &mdash; we'll turn it into your day-of timeline.</div>
+</div>
+
+<!-- TAPE STRIP -->
+<div class="tape">
+  <span class="tape-item">The Couple</span><span class="tape-dot">&#9670;</span>
+  <span class="tape-item">Vendors</span><span class="tape-dot">&#9670;</span>
+  <span class="tape-item">Wedding Party</span><span class="tape-dot">&#9670;</span>
+  <span class="tape-item">Ceremony</span><span class="tape-dot">&#9670;</span>
+  <span class="tape-item">Reception</span><span class="tape-dot">&#9670;</span>
+  <span class="tape-item">Review &amp; Submit</span>
+</div>
+
+<!-- MAIN FORM -->
+<div class="wrap">
+  <div class="timeline-progress" id="progressBar"></div>
+
+  <div class="panel">
+    <form id="weddingForm" onsubmit="return false;">
+
+      <!-- STEP 1: Couple & Wedding -->
+      <div class="step active" data-step="0">
+        <div class="step-eyebrow">Chapter One</div>
+        <div class="step-title">The Couple &amp; The Date</div>
+        <div class="step-desc">Let's start with the basics of your celebration.</div>
+        <div class="grid">
+          <div class="field"><label>Partner 1 Full Name</label><input type="text" id="p1name"></div>
+          <div class="field"><label>Partner 2 Full Name</label><input type="text" id="p2name"></div>
+          <div class="field"><label>Partner 1 Cell</label><input type="tel" id="p1cell"></div>
+          <div class="field"><label>Partner 2 Cell</label><input type="tel" id="p2cell"></div>
+          <div class="field"><label>Wedding Date</label><input type="date" id="weddingDate"></div>
+          <div class="field"><label>Estimated Guest Count</label><input type="number" id="guestCount"></div>
+          <div class="field"><label>Wedding Colors</label><input type="text" id="weddingColors" placeholder="e.g. Wisteria &amp; Eucalyptus"></div>
+          <div class="field"><label>DJ Attire Request</label><input type="text" id="djAttire" placeholder="e.g. Business Casual, Black Tie"></div>
+        </div>
+        <div class="field">
+          <label>Is there a rehearsal dinner the night before?</label>
+          <div class="pill-group" id="hasRehearsal">
+            <div class="pill" data-val="yes">Yes</div>
+            <div class="pill" data-val="no">No</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Vendors -->
+      <div class="step" data-step="1">
+        <div class="step-eyebrow">Chapter Two</div>
+        <div class="step-title">Vendor Contacts</div>
+        <div class="step-desc">Add every vendor we may need to coordinate with on the day.</div>
+        <div id="vendorList"></div>
+        <button type="button" class="add-btn" id="addVendor">+ Add Another Vendor</button>
+      </div>
+
+      <!-- STEP 3: Wedding Party -->
+      <div class="step" data-step="2">
+        <div class="step-eyebrow">Chapter Three</div>
+        <div class="step-title">Wedding Party &amp; Key Contacts</div>
+        <div class="step-desc">Who's standing beside you — and who do we call if we can't reach you?</div>
+        <div class="grid">
+          <div class="field"><label>Best Man Name &amp; Cell</label><input type="text" id="bestMan"></div>
+          <div class="field"><label>Maid / Matron of Honor Name &amp; Cell</label><input type="text" id="moh"></div>
+        </div>
+        <div id="partyList"></div>
+        <button type="button" class="add-btn" id="addParty">+ Add Bridesmaid / Groomsman Pair</button>
+        <div class="field" style="margin-top:22px;">
+          <label>Day-of Point of Contact (if not the couple)</label>
+          <input type="text" id="dayOfContact" placeholder="Name &amp; cell — e.g. wedding planner or family member">
+        </div>
+      </div>
+
+      <!-- STEP 4: Getting Ready & Ceremony -->
+      <div class="step" data-step="3">
+        <div class="step-eyebrow">Chapter Four</div>
+        <div class="step-title">Getting Ready &amp; Ceremony</div>
+        <div class="step-desc">The hours before "I do."</div>
+        <div class="grid">
+          <div class="field"><label>Hair / Makeup Start Time</label><input type="time" id="hmuStart"></div>
+          <div class="field"><label>Photographer Arrival Time</label><input type="time" id="photoArrival"></div>
+          <div class="field"><label>Ceremony Venue Name</label><input type="text" id="ceremonyVenue"></div>
+          <div class="field"><label>Ceremony Venue Address</label><input type="text" id="ceremonyAddress"></div>
+          <div class="field"><label>Ceremony Start Time</label><input type="time" id="ceremonyTime"></div>
+          <div class="field"><label>Reception Venue Name</label><input type="text" id="receptionVenue"></div>
+          <div class="field"><label>Reception Venue Address</label><input type="text" id="receptionAddress"></div>
+          <div class="field"><label>Cocktail Hour Start Time</label><input type="time" id="cocktailTime"></div>
+        </div>
+        <div class="field">
+          <label>Notes on transportation / shuttles between locations</label>
+          <textarea id="transportNotes" placeholder="e.g. Shuttle departs church at 4:00pm for photos, returns to venue at 5:00pm"></textarea>
+        </div>
+      </div>
+
+      <!-- STEP 5: Reception Flow -->
+      <div class="step" data-step="4">
+        <div class="step-eyebrow">Chapter Five</div>
+        <div class="step-title">Reception Flow</div>
+        <div class="step-desc">Map out the key moments — we'll fill the gaps with general dancing.</div>
+        <div class="grid">
+          <div class="field"><label>Grand Entrance Song</label><input type="text" id="entranceSong"></div>
+          <div class="field"><label>First Dance Song</label><input type="text" id="firstDance"></div>
+          <div class="field"><label>Parent Dance Song(s)</label><input type="text" id="parentDance"></div>
+          <div class="field"><label>Cake Cutting Song</label><input type="text" id="cakeSong"></div>
+          <div class="field">
+            <label>Bouquet / Garter Toss?</label>
+            <div class="pill-group" id="hasToss">
+              <div class="pill" data-val="yes">Yes</div>
+              <div class="pill" data-val="no">No</div>
+            </div>
+          </div>
+          <div class="field"><label>Last Call Time</label><input type="time" id="lastCall"></div>
+        </div>
+        <div class="field">
+          <label>Special traditions or cultural moments</label>
+          <textarea id="traditions" placeholder="e.g. anniversary dance, money dance, hora, cultural ceremony"></textarea>
+        </div>
+        <div class="field">
+          <label>Speeches — who's speaking and roughly how long?</label>
+          <textarea id="speeches" placeholder="e.g. Best Man (5 min), Maid of Honor (5 min), Father of the Bride (3 min)"></textarea>
+        </div>
+
+        <div class="rule"><div class="rule-line"></div><span class="rule-diamond">&#9670;</span><div class="rule-line"></div></div>
+
+        <div class="field">
+          <label>Genres You'd Like Included</label>
+          <span class="hint" style="margin-bottom:12px; display:block;">Check all that apply — helps us shape the general dancing sets.</span>
+          <div class="checkbox-grid" id="genreChecks">
+            <label class="cb"><input type="checkbox" value="1980s"> 1980s</label>
+            <label class="cb"><input type="checkbox" value="1990s"> 1990s</label>
+            <label class="cb"><input type="checkbox" value="2000s"> 2000s</label>
+            <label class="cb"><input type="checkbox" value="2010s"> 2010s</label>
+            <label class="cb"><input type="checkbox" value="2020s"> 2020s</label>
+            <label class="cb"><input type="checkbox" value="Classic Rock"> Classic Rock</label>
+            <label class="cb"><input type="checkbox" value="Club / EDM"> Club / EDM</label>
+            <label class="cb"><input type="checkbox" value="Country"> Country</label>
+            <label class="cb"><input type="checkbox" value="Dancehall / Moombahton / Reggaeton"> Dancehall / Moombahton / Reggaeton</label>
+            <label class="cb"><input type="checkbox" value="Disco / Funk"> Disco / Funk</label>
+            <label class="cb"><input type="checkbox" value="Hip-Hop"> Hip-Hop</label>
+            <label class="cb"><input type="checkbox" value="Mashups / Remixes"> Mashups / Remixes</label>
+            <label class="cb"><input type="checkbox" value="Motown"> Motown</label>
+            <label class="cb"><input type="checkbox" value="Old School"> Old School</label>
+            <label class="cb"><input type="checkbox" value="Oldies"> Oldies</label>
+            <label class="cb"><input type="checkbox" value="Pop Punk / Rock"> Pop Punk / Rock</label>
+            <label class="cb"><input type="checkbox" value="R&B"> R&amp;B</label>
+            <label class="cb"><input type="checkbox" value="Top 40"> Top 40</label>
+            <label class="cb"><input type="checkbox" value="Trap / Twerk"> Trap / Twerk</label>
+            <label class="cb"><input type="checkbox" value="None" id="genreNone"> None</label>
+          </div>
+          <div class="field" style="margin-top:14px;">
+            <label>Other Genre</label>
+            <input type="text" id="genreOther" placeholder="Anything not listed above">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Spotify Playlist Link</label>
+          <input type="text" id="spotifyLink" placeholder="Paste a Spotify playlist URL (optional)">
+          <span class="hint">We'll pull from this for general dancing alongside your must-plays.</span>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label>Must-Play Songs</label>
+            <textarea id="mustPlay" placeholder="Songs you definitely want played"></textarea>
+          </div>
+          <div class="field">
+            <label>Do-Not-Play Songs</label>
+            <textarea id="doNotPlay" placeholder="Songs or artists to avoid"></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label>Additional Music Notes</label>
+          <textarea id="musicNotes" placeholder="Genre preferences, era preferences, anything else for general dancing"></textarea>
+        </div>
+      </div>
+
+      <!-- STEP 6: Review -->
+      <div class="step" data-step="5">
+        <div class="step-eyebrow">Final Chapter</div>
+        <div class="step-title">Review Your Details</div>
+        <div class="step-desc">Take a look before you send it our way. You can go back to edit any section.</div>
+        <div id="reviewContent"></div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="step" data-step="6">
+        <div class="success">
+          <div class="success-check">✓</div>
+          <h2>Received, with love.</h2>
+          <div class="success-script">Uniquely Yours</div>
+          <p>Your details are in. We'll start drafting your day-of timeline and follow up if we have any questions before the big day.</p>
+          <button type="button" class="btn ghost" id="downloadSummary">Download a Copy</button>
+        </div>
+      </div>
+
+    </form>
+  </div><!-- /panel -->
+
+  <div class="nav-row" id="navRow">
+    <button type="button" class="btn ghost" id="prevBtn">&#8592; Back</button>
+    <button type="button" class="btn" id="nextBtn">Continue &#8594;</button>
+  </div>
+
+  <footer>Independence Events &nbsp;&#9670;&nbsp; independence-events.com</footer>
+</div><!-- /wrap -->
+
+<script>
+const steps = ["Couple","Vendors","Wedding Party","Ceremony","Reception","Review"];
+let current = 0;
+const totalFormSteps = 6;
+
+function renderProgress(){
+  const bar = document.getElementById('progressBar');
+  bar.innerHTML = '';
+  steps.forEach((label, i) => {
+    const div = document.createElement('div');
+    div.className = 'tp-step' + (i < current ? ' done' : '') + (i === current ? ' active' : '');
+    div.innerHTML = `<div class="tp-line"></div><div class="tp-dot"></div><div class="tp-label">${label}</div>`;
+    bar.appendChild(div);
+  });
+}
+
+function showStep(n){
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.querySelector(`.step[data-step="${n}"]`).classList.add('active');
+  current = n;
+  renderProgress();
+  const navRow = document.getElementById('navRow');
+  if(n === 6){ navRow.style.display = 'none'; }
+  else {
+    navRow.style.display = 'flex';
+    document.getElementById('prevBtn').disabled = (n === 0);
+    document.getElementById('nextBtn').textContent = (n === 5) ? 'Submit Form' : 'Continue \u2192';
+  }
+  if(n === 5){ renderReview(); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if(current === 5){ submitForm(); }
+  else if(current < 5){ showStep(current + 1); }
+});
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if(current > 0) showStep(current - 1);
+});
+
+// Pill toggles
+function setupPillGroup(id){
+  document.querySelectorAll(`#${id} .pill`).forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll(`#${id} .pill`).forEach(x => x.classList.remove('selected'));
+      p.classList.add('selected');
+    });
+  });
+}
+setupPillGroup('hasRehearsal');
+setupPillGroup('hasToss');
+
+// Genre checkboxes — "None" clears others, others clear "None"
+const genreNone = document.getElementById('genreNone');
+const genreChecks = document.querySelectorAll('#genreChecks input[type=checkbox]');
+genreChecks.forEach(cb => {
+  cb.addEventListener('change', () => {
+    if(cb === genreNone && cb.checked){
+      genreChecks.forEach(other => { if(other !== genreNone) other.checked = false; });
+    } else if(cb !== genreNone && cb.checked){
+      genreNone.checked = false;
+    }
+  });
+});
+function collectGenres(){
+  return [...genreChecks].filter(cb => cb.checked).map(cb => cb.value);
+}
+function getPillValue(id){
+  const sel = document.querySelector(`#${id} .pill.selected`);
+  return sel ? sel.dataset.val : '';
+}
+
+// Vendor repeating blocks
+let vendorCount = 0;
+function addVendorBlock(){
+  vendorCount++;
+  const idx = vendorCount;
+  const div = document.createElement('div');
+  div.className = 'repeat-block';
+  div.dataset.idx = idx;
+  div.innerHTML = `
+    <button type="button" class="rb-remove" onclick="this.parentElement.remove()">Remove</button>
+    <div class="rb-title">Vendor ${idx}</div>
+    <div class="grid">
+      <div class="field"><label>Role / Type</label><input type="text" class="v-role" placeholder="e.g. Photographer, Florist, Caterer"></div>
+      <div class="field"><label>Business Name</label><input type="text" class="v-business"></div>
+      <div class="field"><label>Point of Contact</label><input type="text" class="v-poc"></div>
+      <div class="field"><label>Phone</label><input type="tel" class="v-phone"></div>
+      <div class="field"><label>Email</label><input type="email" class="v-email"></div>
+      <div class="field"><label>Arrival Time (if known)</label><input type="time" class="v-arrival"></div>
+    </div>`;
+  document.getElementById('vendorList').appendChild(div);
+}
+document.getElementById('addVendor').addEventListener('click', () => addVendorBlock());
+addVendorBlock(); addVendorBlock(); // start with 2
+
+// Wedding party pairs
+let partyCount = 0;
+function addPartyBlock(){
+  partyCount++;
+  const idx = partyCount;
+  const div = document.createElement('div');
+  div.className = 'repeat-block';
+  div.innerHTML = `
+    <button type="button" class="rb-remove" onclick="this.parentElement.remove()">Remove</button>
+    <div class="rb-title">Pair ${idx}</div>
+    <div class="grid">
+      <div class="field"><label>Name</label><input type="text" class="party-a"></div>
+      <div class="field"><label>Paired With</label><input type="text" class="party-b"></div>
+    </div>`;
+  document.getElementById('partyList').appendChild(div);
+}
+document.getElementById('addParty').addEventListener('click', addPartyBlock);
+addPartyBlock();
+
+function val(id){ return document.getElementById(id).value.trim(); }
+
+function collectVendors(){
+  return [...document.querySelectorAll('#vendorList .repeat-block')].map(b => ({
+    role:     b.querySelector('.v-role').value.trim(),
+    business: b.querySelector('.v-business').value.trim(),
+    poc:      b.querySelector('.v-poc').value.trim(),
+    phone:    b.querySelector('.v-phone').value.trim(),
+    email:    b.querySelector('.v-email').value.trim(),
+    arrival:  b.querySelector('.v-arrival').value.trim(),
+  })).filter(v => v.role || v.business);
+}
+function collectParty(){
+  return [...document.querySelectorAll('#partyList .repeat-block')].map(b => ({
+    a: b.querySelector('.party-a').value.trim(),
+    b: b.querySelector('.party-b').value.trim(),
+  })).filter(p => p.a || p.b);
+}
+
+function row(k, v){
+  return `<div class="review-row"><div class="k">${k}</div><div class="v">${v && v.length ? v : '<span class="review-empty">Not provided</span>'}</div></div>`;
+}
+
+function renderReview(){
+  const vendors = collectVendors();
+  const party   = collectParty();
+  let html = '';
+
+  html += `<div class="review-section"><h3>The Couple <span>&amp; The Date</span></h3>
+    ${row('Couple', `${val('p1name')} &amp; ${val('p2name')}`)}
+    ${row('Cells', `${val('p1cell')} / ${val('p2cell')}`)}
+    ${row('Wedding Date', val('weddingDate'))}
+    ${row('Guest Count', val('guestCount'))}
+    ${row('Wedding Colors', val('weddingColors'))}
+    ${row('DJ Attire', val('djAttire'))}
+    ${row('Rehearsal Dinner', getPillValue('hasRehearsal'))}
+  </div>`;
+
+  html += `<div class="review-section"><h3>Vendors</h3>`;
+  if(vendors.length === 0){ html += `<div class="review-empty">No vendors added</div>`; }
+  vendors.forEach(v => {
+    html += row(v.role || 'Vendor', `${v.business} — ${v.poc}${v.phone ? ' · ' + v.phone : ''}${v.email ? ' · ' + v.email : ''}`);
+  });
+  html += `</div>`;
+
+  html += `<div class="review-section"><h3>Wedding Party</h3>
+    ${row('Best Man', val('bestMan'))}
+    ${row('Maid / Matron of Honor', val('moh'))}`;
+  party.forEach((p, i) => { html += row(`Pair ${i+1}`, `${p.a} &amp; ${p.b}`); });
+  html += row('Day-of Contact', val('dayOfContact'));
+  html += `</div>`;
+
+  html += `<div class="review-section"><h3>Getting Ready <span>&amp; Ceremony</span></h3>
+    ${row('Hair / Makeup Start', val('hmuStart'))}
+    ${row('Photographer Arrival', val('photoArrival'))}
+    ${row('Ceremony Venue', `${val('ceremonyVenue')} — ${val('ceremonyAddress')}`)}
+    ${row('Ceremony Time', val('ceremonyTime'))}
+    ${row('Reception Venue', `${val('receptionVenue')} — ${val('receptionAddress')}`)}
+    ${row('Cocktail Hour', val('cocktailTime'))}
+    ${row('Transportation Notes', val('transportNotes'))}
+  </div>`;
+
+  html += `<div class="review-section"><h3>Reception <span>Flow</span></h3>
+    ${row('Entrance Song', val('entranceSong'))}
+    ${row('First Dance', val('firstDance'))}
+    ${row('Parent Dance', val('parentDance'))}
+    ${row('Cake Cutting Song', val('cakeSong'))}
+    ${row('Bouquet / Garter Toss', getPillValue('hasToss'))}
+    ${row('Last Call', val('lastCall'))}
+    ${row('Traditions', val('traditions'))}
+    ${row('Speeches', val('speeches'))}
+    ${row('Spotify Playlist', val('spotifyLink'))}
+    ${row('Genres Requested', [...collectGenres(), val('genreOther')].filter(Boolean).join(', '))}
+    ${row('Must-Play Songs', val('mustPlay'))}
+    ${row('Do-Not-Play Songs', val('doNotPlay'))}
+    ${row('Additional Music Notes', val('musicNotes'))}
+  </div>`;
+
+  document.getElementById('reviewContent').innerHTML = html;
+}
+
+function buildSummaryText(){
+  const vendors = collectVendors();
+  const party   = collectParty();
+  let t = `WEDDING PLANNING FORM — INDEPENDENCE EVENTS\n`;
+  t += `${val('p1name')} & ${val('p2name')}\n${val('weddingDate')}\n\n`;
+  t += `--- COUPLE & DATE ---\n`;
+  t += `Cells: ${val('p1cell')} / ${val('p2cell')}\nGuests: ${val('guestCount')}\nColors: ${val('weddingColors')}\nDJ Attire: ${val('djAttire')}\nRehearsal Dinner: ${getPillValue('hasRehearsal')}\n\n`;
+  t += `--- VENDORS ---\n`;
+  vendors.forEach(v => { t += `${v.role}: ${v.business} | POC: ${v.poc} | ${v.phone} | ${v.email} | Arrival: ${v.arrival}\n`; });
+  t += `\n--- WEDDING PARTY ---\n`;
+  t += `Best Man: ${val('bestMan')}\nMOH: ${val('moh')}\n`;
+  party.forEach((p, i) => { t += `Pair ${i+1}: ${p.a} & ${p.b}\n`; });
+  t += `Day-of Contact: ${val('dayOfContact')}\n\n`;
+  t += `--- GETTING READY & CEREMONY ---\n`;
+  t += `HMU Start: ${val('hmuStart')}\nPhotographer Arrival: ${val('photoArrival')}\nCeremony: ${val('ceremonyVenue')}, ${val('ceremonyAddress')} at ${val('ceremonyTime')}\nReception: ${val('receptionVenue')}, ${val('receptionAddress')}\nCocktail Hour: ${val('cocktailTime')}\nTransportation: ${val('transportNotes')}\n\n`;
+  t += `--- RECEPTION FLOW ---\n`;
+  t += `Entrance Song: ${val('entranceSong')}\nFirst Dance: ${val('firstDance')}\nParent Dance: ${val('parentDance')}\nCake Song: ${val('cakeSong')}\nToss: ${getPillValue('hasToss')}\nLast Call: ${val('lastCall')}\nTraditions: ${val('traditions')}\nSpeeches: ${val('speeches')}\nSpotify Playlist: ${val('spotifyLink')}\nGenres Requested: ${[...collectGenres(), val('genreOther')].filter(Boolean).join(', ')}\nMust-Play Songs: ${val('mustPlay')}\nDo-Not-Play Songs: ${val('doNotPlay')}\nAdditional Music Notes: ${val('musicNotes')}\n`;
+  return t;
+}
+
+// Formspree endpoint — unchanged from original
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvzjbawl";
+
+function submitForm(){
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  nextBtn.disabled = true;
+  prevBtn.disabled = true;
+  nextBtn.textContent = 'Sending\u2026';
+
+  const payload = {
+    _subject: `Wedding Form: ${val('p1name')} & ${val('p2name')} — ${val('weddingDate')}`,
+    couple: `${val('p1name')} & ${val('p2name')}`,
+    wedding_date: val('weddingDate'),
+    full_details: buildSummaryText()
+  };
+
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(res => {
+    if(!res.ok) throw new Error('Submission failed');
+    showStep(6);
+  })
+  .catch(() => {
+    alert("We couldn't send this automatically. Please use the Download button on the next screen and email the file to your DJ directly.");
+    showStep(6);
+  })
+  .finally(() => {
+    nextBtn.disabled = false;
+    prevBtn.disabled = false;
+    nextBtn.textContent = 'Submit Form';
+  });
+}
+
+document.getElementById('downloadSummary').addEventListener('click', () => {
+  const text = buildSummaryText();
+  const blob = new Blob([text], { type: 'text/plain' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url;
+  a.download = `${val('p1name') || 'couple'}_${val('p2name') || ''}_wedding_details.txt`.replace(/\s+/g, '_');
+  a.click();
+});
+
+renderProgress();
+</script>
+</body>
+</html>
