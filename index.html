@@ -59,7 +59,8 @@
     color: var(--cream);
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.65;
     overflow-x: hidden;
   }
 
@@ -88,7 +89,7 @@
   .nav-links { display: flex; gap: 30px; align-items: center; }
   .nav-links a {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     color: rgba(255,255,255,0.62);
     letter-spacing: 2.5px;
@@ -144,7 +145,7 @@
   }
   .hero-eyebrow {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 4.5px;
     text-transform: uppercase;
@@ -163,7 +164,7 @@
   .hero-title em { font-style: italic; color: var(--mag); }
   .hero-sub {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(16px, 2.1vw, 21px);
+    font-size: clamp(19px, 2.3vw, 24px);
     font-style: italic;
     color: rgba(247,243,236,0.82);
     margin-bottom: 30px;
@@ -174,7 +175,7 @@
     background: var(--mag);
     color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     padding: 14px 32px;
     letter-spacing: 2.5px;
@@ -188,7 +189,7 @@
     border: 1px solid var(--teal);
     color: var(--teal);
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     padding: 14px 32px;
     letter-spacing: 2.5px;
@@ -218,7 +219,7 @@
   }
   .tape-item {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 3.5px;
     text-transform: uppercase;
@@ -231,7 +232,7 @@
   /* ── SHARED SECTION BITS ── */
   .section-eyebrow {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -241,7 +242,7 @@
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: clamp(28px, 4vw, 44px);
+    font-size: clamp(32px, 4.4vw, 48px);
     color: var(--ink);
     line-height: 1.14;
   }
@@ -252,7 +253,7 @@
   .rule-diamond { color: var(--mag); font-size: 7px; }
   .script {
     font-family: 'Dancing Script', cursive;
-    font-size: 21px;
+    font-size: 25px;
     color: rgba(206,0,242,0.72);
     margin-bottom: 10px;
   }
@@ -270,7 +271,7 @@
     margin-bottom: 56px;
   }
   .services-body {
-    font-size: 13.5px;
+    font-size: 16.5px;
     color: #555;
     line-height: 1.85;
   }
@@ -301,7 +302,7 @@
   .svc:hover::before { transform: scaleX(1); }
   .svc-label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -311,27 +312,32 @@
   .svc-name { margin: 0; font-weight: 600; }
   .svc-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
+    font-size: 27px;
     font-weight: 600;
     color: var(--ink);
     margin-bottom: 9px;
   }
   .svc-desc {
-    font-size: 12.5px;
+    font-size: 16px;
     color: #666;
     line-height: 1.75;
     margin-bottom: 18px;
   }
-  .svc-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-  .svc-pill {
-    border: 1px solid var(--mag);
-    padding: 3px 11px;
+  .svc-tags {
+    display: block;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
-    letter-spacing: 1.8px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--ink);
+    line-height: 1.9;
+  }
+  .svc-sep {
+    color: var(--mag);
+    font-size: 8px;
+    vertical-align: middle;
+    margin: 0 2px;
   }
 
   /* ── PHOTO STRIP ── */
@@ -381,7 +387,7 @@
   }
   .about > * { position: relative; z-index: 1; }
   .about-body {
-    font-size: 13.5px;
+    font-size: 16.5px;
     color: rgba(247,243,236,0.72);
     line-height: 1.85;
   }
@@ -400,7 +406,7 @@
   .quote-box::after  { bottom: 6px; right: 6px; border-bottom: 2px solid var(--mag); border-right: 2px solid var(--mag); }
   .quote-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 21px;
+    font-size: 24px;
     font-style: italic;
     color: var(--cream);
     line-height: 1.5;
@@ -408,7 +414,7 @@
   }
   .quote-attr {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--grey);
@@ -439,7 +445,7 @@
     z-index: 1;
   }
   .inquiry-body {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--grey);
     line-height: 1.85;
     margin-bottom: 30px;
@@ -447,21 +453,21 @@
   .contact-item { display: flex; flex-direction: column; margin-bottom: 15px; }
   .contact-label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--mag);
     margin-bottom: 3px;
   }
-  .contact-value { font-size: 14px; color: var(--cream); font-weight: 400; }
+  .contact-value { font-size: 17px; color: var(--cream); font-weight: 400; }
   .contact-value a { color: var(--cream); text-decoration: none; transition: color .2s; }
   .contact-value a:hover { color: var(--mag); }
   .area-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 26px; }
   .area-tag {
     border: 1px solid rgba(206,0,242,0.3);
-    padding: 4px 13px;
+    padding: 5px 15px;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(247,243,236,0.6);
@@ -473,7 +479,7 @@
     background: var(--mag);
     color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: .3em;
     text-transform: uppercase;
@@ -483,7 +489,7 @@
   }
   .sf-sub {
     color: var(--grey);
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.7;
     margin-bottom: 24px;
   }
@@ -498,7 +504,7 @@
   .sf-field label {
     display: block;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: .16em;
     text-transform: uppercase;
@@ -512,9 +518,9 @@
     border: 1px solid #2a2a2a;
     color: var(--cream);
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
-    padding: 11px 12px;
+    padding: 13px 13px;
     outline: none;
     transition: border-color .15s;
     -webkit-appearance: none;
@@ -536,7 +542,7 @@
     color: #fff;
     border: none;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: .14em;
     text-transform: uppercase;
@@ -547,12 +553,12 @@
   }
   .sf-btn:hover { background: #a800c4; }
   .sf-btn:disabled { opacity: .5; cursor: wait; }
-  .sf-fine { text-align: center; color: #5a5a5a; font-size: 11.5px; margin-top: 13px; }
+  .sf-fine { text-align: center; color: #5a5a5a; font-size: 14px; margin-top: 13px; }
   .sf-err {
     display: none;
     background: #2a1212;
     color: #ff9a9a;
-    font-size: 12.5px;
+    font-size: 15px;
     padding: 10px 12px;
     margin-bottom: 14px;
     line-height: 1.5;
@@ -569,7 +575,7 @@
     color: #fff;
     margin-bottom: 12px;
   }
-  .sf-success p { color: var(--grey); font-size: 13px; line-height: 1.75; }
+  .sf-success p { color: var(--grey); font-size: 16px; line-height: 1.75; }
   .sf-success p b { color: var(--cream); font-weight: 600; }
 
   /* ── FOOTER ── */
@@ -586,12 +592,12 @@
   .footer-logo img { height: 60px; width: auto; max-width: 100%; object-fit: contain; display: block; }
   .footer-tagline {
     font-family: 'Dancing Script', cursive;
-    font-size: 19px;
+    font-size: 22px;
     color: rgba(206,0,242,0.62);
   }
   .footer-copy {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 1.5px;
     color: var(--grey);
     text-transform: uppercase;
@@ -607,6 +613,22 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
+    body { font-size: 18px; }
+    .svc-tags { font-size: 16px; letter-spacing: 1.6px; line-height: 2; }
+    .svc-desc { font-size: 17px; line-height: 1.75; }
+    .svc-name { font-size: 29px; }
+    .svc-label { font-size: 15px; }
+    .services-body { font-size: 17.5px; line-height: 1.8; }
+    .about-body { font-size: 17.5px; line-height: 1.8; }
+    .quote-text { font-size: 23px; }
+    .inquiry-body { font-size: 17px; }
+    .contact-value { font-size: 18px; }
+    .hero-sub { font-size: 20px; }
+    .hero-eyebrow { font-size: 14px; letter-spacing: 3.5px; }
+    .sf-field label { font-size: 15px; }
+    .sf-field input, .sf-field select, .sf-field textarea { font-size: 16px; }
+    .btn-mag, .btn-ghost { font-size: 16px; padding: 15px 30px; }
+    .area-tag { font-size: 14px; }
     nav { padding: 12px 24px; }
     .nav-logo img { height: 44px; }
     .footer-logo img { height: 54px; }
@@ -760,31 +782,19 @@
       <div class="svc-label">Weddings</div>
       <h3 class="svc-name">Your day, orchestrated</h3>
       <div class="svc-desc">Ceremony through reception, handled end to end. We coordinate with your venue and vendors, time every moment, and keep the floor full from the first dance to the last song.</div>
-      <div class="svc-pills">
-        <span class="svc-pill">Ceremony Sound</span>
-        <span class="svc-pill">Cocktail Hour</span>
-        <span class="svc-pill">Reception DJ</span>
-      </div>
+      <div class="svc-tags"><span class="svc-tag">Ceremony Sound</span> <span class="svc-sep">&#9670;</span> <span class="svc-tag">Cocktail Hour</span> <span class="svc-sep">&#9670;</span> <span class="svc-tag">Reception DJ</span></div>
     </div>
     <div class="svc">
       <div class="svc-label">Private Events</div>
       <h3 class="svc-name">Every celebration</h3>
       <div class="svc-desc">Corporate events, holiday parties, and milestone celebrations of every kind. We match the energy to the room and the crowd in front of us.</div>
-      <div class="svc-pills">
-        <span class="svc-pill">Corporate Parties</span>
-        <span class="svc-pill">Holiday Parties</span>
-        <span class="svc-pill">Milestone Parties</span>
-      </div>
+      <div class="svc-tags"><span class="svc-tag">Corporate Parties</span> <span class="svc-sep">&#9670;</span> <span class="svc-tag">Holiday Parties</span> <span class="svc-sep">&#9670;</span> <span class="svc-tag">Milestone Parties</span></div>
     </div>
     <div class="svc">
       <div class="svc-label">Enhancements</div>
       <h3 class="svc-name">Details that transform</h3>
       <div class="svc-desc">Color-matched uplights, sweeping dancefloor wash, and programmable intelligent lighting that shifts from dinner ambiance to full dancefloor energy.</div>
-      <div class="svc-pills">
-        <span class="svc-pill">Uplights</span>
-        <span class="svc-pill">Dancefloor Lights</span>
-        <span class="svc-pill">Intelligent Lights</span>
-      </div>
+      <div class="svc-tags"><span class="svc-tag">Uplights</span> <span class="svc-sep">&#9670;</span> <span class="svc-tag">Dancefloor Lights</span> <span class="svc-sep">&#9670;</span> <span class="svc-tag">Intelligent Lights</span></div>
     </div>
   </div>
 </section>
